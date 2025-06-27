@@ -5,17 +5,21 @@ on:
     branches:
       - main
     paths: 
-      - "folder1/**" 
+      - 'folder1/**' 
 
   pull_request:
     branches:
       - main 
     paths: 
-      - "folder1/**" 
+      - 'folder1/**' 
 
 jobs:
   build:
+
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./folder1
 
     steps:
       - uses: actions/checkout@v4
@@ -27,3 +31,5 @@ jobs:
         run: |
           python3 --version
           node --version
+          ls -lah
+          cat file.txt
