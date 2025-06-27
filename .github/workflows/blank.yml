@@ -15,12 +15,10 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: ./folder1
-
     steps:
       - uses: actions/checkout@v4
 
@@ -31,5 +29,6 @@ jobs:
         run: |
           python3 --version
           node --version
+          docker --version
           ls -lah
           cat file.txt
