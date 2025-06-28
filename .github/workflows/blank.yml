@@ -32,3 +32,11 @@ jobs:
           docker --version
           ls -lah
           cat file.txt
+      - name: Git commit test
+        run: |
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+          echo "This is a test " >> file.txt
+          git add .
+          git commit -m "Update files for version 
+          git push origin "${{ env.CURRENT_VERSION }}"
