@@ -20,19 +20,19 @@ jobs:
       run:
         working-directory: ./folder1
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      - name: Run a multi-line script
+      - name: Check Python, Node.js, and Docker versions
         run: |
           python3 --version
           node --version
           docker --version
           ls -lah
           cat file.txt
+
       - name: Git commit test
+        if: github.ref == 'refs/heads/main'
         run: |
           git config --global user.email "action@github.com"
           git config --global user.name "GitHub Action"
