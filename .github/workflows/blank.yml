@@ -40,3 +40,9 @@ jobs:
           git add .
           git commit -m "Update files for version"
           git push -u origin "main"
+
+      - name: Use github secrets
+        run: |
+          echo "Using GitHub secrets"
+          echo "${{ secrets.MUTANT_CAR }}" > secret.txt
+          cat secret.txt
