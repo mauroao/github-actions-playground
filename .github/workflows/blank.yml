@@ -39,4 +39,4 @@ jobs:
           echo "This is a test " >> file.txt
           git add .
           git commit -m "Update files for version"
-          git push origin "${{ env.CURRENT_VERSION }}"
+          git push -u origin "main"
