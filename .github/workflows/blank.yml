@@ -31,15 +31,15 @@ jobs:
           ls -lah
           cat file.txt
 
-      - name: Git commit test
-        if: github.ref == 'refs/heads/main'
-        run: |
-          git config --global user.email "action@github.com"
-          git config --global user.name "GitHub Action"
-          echo "This is a test " >> file.txt
-          git add .
-          git commit -m "Update files for version"
-          git push -u origin "main"
+      # - name: Git commit test
+        # if: github.ref == 'refs/heads/main'
+        # run: |
+          # git config --global user.email "action@github.com"
+          # git config --global user.name "GitHub Action"
+          # echo "This is a test " >> file.txt
+          # git add .
+          # git commit -m "Update files for version"
+          # git push -u origin "main"
 
       - name: Use github secrets
         run: |
