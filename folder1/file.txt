@@ -1,1 +1,1 @@
-this is a content of folder1/file.txt kkrr asabbb
+this is a content of folder1/file.txt kkrr asabbbThis is a test 
